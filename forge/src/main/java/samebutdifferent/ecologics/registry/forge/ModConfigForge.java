@@ -9,6 +9,7 @@ public class ModConfigForge {
 
     public static final String CATEGORY_BEACH = "beach";
     public static final ForgeConfigSpec.DoubleValue COCONUT_CRAB_SPAWN_CHANCE;
+    public static final ForgeConfigSpec.BooleanValue ALLOW_HANGING_COCONUT_SPAWN;
 
     public static final String CATEGORY_DESERT = "desert";
     public static final ForgeConfigSpec.DoubleValue PRICKLY_PEAR_GROWTH_CHANCE;
@@ -20,7 +21,9 @@ public class ModConfigForge {
         ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
 
         COMMON_BUILDER.comment("Beach Update").push(CATEGORY_BEACH);
+//        COCONUT_SPAWN_OPTIONS = COMMON_BUILDER.comment("What can spawn ("C_CRAB" "C_SLICES" or "BOTH") when a coconut falls onto the ground").define("fallingCoconutSpawnOptions", true);
         COCONUT_CRAB_SPAWN_CHANCE = COMMON_BUILDER.comment("How often (in percentage) should Coconut Crabs spawn when a coconut breaks? Set it to 0.0 to disable this.").defineInRange("coconutCrabSpawnChance", 0.2, 0.0, 1.0);
+        ALLOW_HANGING_COCONUT_SPAWN = COMMON_BUILDER.comment("(Hanging) Coconuts will spawn on Coconut trees").define("allowHangingCoconutSpawn", true);
         COMMON_BUILDER.pop();
 
         COMMON_BUILDER.comment("Desert Update").push(CATEGORY_DESERT);

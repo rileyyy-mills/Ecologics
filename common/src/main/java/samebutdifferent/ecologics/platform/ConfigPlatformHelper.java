@@ -9,6 +9,11 @@ public class ConfigPlatformHelper {
     }
 
     @ExpectPlatform
+    public static boolean allowHangingCoconutSpawn() {
+        throw new AssertionError();
+    }
+
+    @ExpectPlatform
     public static boolean replaceAzaleaTree() {
         throw new AssertionError();
     }

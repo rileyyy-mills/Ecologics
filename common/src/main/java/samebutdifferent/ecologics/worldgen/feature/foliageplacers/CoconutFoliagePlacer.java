@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
+import samebutdifferent.ecologics.platform.ConfigPlatformHelper;
 import samebutdifferent.ecologics.registry.ModBlocks;
 import samebutdifferent.ecologics.registry.ModFoliagePlacerTypes;
 
@@ -54,6 +55,7 @@ public class CoconutFoliagePlacer extends FoliagePlacer {
         pos.move(direction);
         tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pos);
 
+        if (ConfigPlatformHelper.allowHangingCoconutSpawn()) {
         if (pRandom.nextInt(2) == 0) {
             if (pLevel.isStateAtPosition(pos.below(), BlockBehaviour.BlockStateBase::isAir)) {
                 pBlockSetter.set(pos.below(), ModBlocks.HANGING_COCONUT.get().defaultBlockState());
@@ -64,7 +66,7 @@ public class CoconutFoliagePlacer extends FoliagePlacer {
                 pBlockSetter.set(pos.below().relative(direction.getCounterClockWise()), ModBlocks.HANGING_COCONUT.get().defaultBlockState());
             }
         }
-
+    }
         for (int i = 0; i < 2; i++) {
             pos.move(direction);
             tryPlaceLeaf(pLevel, pBlockSetter, pRandom, pConfig, pos);

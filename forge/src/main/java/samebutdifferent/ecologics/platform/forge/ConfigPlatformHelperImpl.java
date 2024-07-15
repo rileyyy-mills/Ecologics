@@ -7,6 +7,10 @@ public class ConfigPlatformHelperImpl {
         return ModConfigForge.COCONUT_CRAB_SPAWN_CHANCE.get();
     }
 
+    public static boolean allowHangingCoconutSpawn() {
+        return ModConfigForge.ALLOW_HANGING_COCONUT_SPAWN.get();
+    }
+
     public static boolean replaceAzaleaTree() {
         return ModConfigForge.REPLACE_AZALEA_TREE.get();
     }

@@ -11,7 +11,7 @@ displayURL = "https://www.curseforge.com/minecraft/mc-mods/ecologics"
 logoFile = "icon.png"
 authors = "SameButDifferent, Zero_DSRS_VX, Drigonis, Crispytwig, Irishjevil, Foquito Azul"
 description = '''
-Simple vanilla biome updates, with fun mobs, blocks, and more!
+Simple vanilla biome updates, with fun mobs, blocks, and more! This mod was altered and recompiled, in order to disable coconuts from falling and spawning coconut slices.
 '''
 
 [[dependencies.ecologics]]
